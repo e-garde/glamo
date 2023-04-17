@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+<link rel="stylesheet" href="file:///c%3A/Users/gennait/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/extensions/github-markdown-css-main/github-markdown.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+   renderMathInElement(document.body, {
+     delimiters: [
+       { left: "$$", right: "$$", display: true },
+       { left: "$", right: "$", display: false }
+     ]
+   });
+ });
+</script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<!-- omit in toc -->
+<h1 id="%E3%82%B0%E3%83%A9%E3%83%A2mfp%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E7%A2%BA%E8%AA%8D%E6%A1%88">グラモMFPエンコード確認案</h1>
+<h2 id="1-%E7%9B%AE%E6%AC%A1">1. 目次</h2>
+<ul>
+<li><a href="#1-%E7%9B%AE%E6%AC%A1">1. 目次</a></li>
+<li><a href="#2-%E6%A6%82%E8%A6%81">2. 概要</a>
+<ul>
+<li><a href="#21-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E6%A9%9F%E5%99%A8">2.1. 使用する機器</a></li>
+<li><a href="#22-%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E4%BB%95%E6%A7%98">2.2. エンコード仕様</a>
+<ul>
+<li><a href="#221-%E9%8D%B5%E5%80%A4">2.2.1 鍵値</a></li>
+<li><a href="#222-%E5%8F%AF%E5%A4%89%E3%83%87%E3%83%BC%E3%82%BF%E4%BE%8B">2.2.2 可変データ例</a></li>
+<li><a href="#223-%E5%9B%BA%E5%AE%9A%E3%83%87%E3%83%BC%E3%82%BF">2.2.3 固定データ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#3-%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99">3. 事前準備</a></li>
+<li><a href="#4-%E3%82%AB%E3%83%BC%E3%83%89%E3%81%B8%E3%81%AE%E9%8D%B5%E3%81%AE%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E7%A2%BA%E8%AA%8D">4. カードへの鍵の書き込み確認</a></li>
+<li><a href="#5-%E5%8F%AF%E5%A4%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E7%A2%BA%E8%AA%8D">5. 可変データの書き込み確認</a></li>
+<li><a href="#51-%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF0001h%E3%81%A8%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF0002h%E3%81%AE%E7%A2%BA%E8%AA%8D">5.1. ブロック0001hとブロック0002hの確認</a></li>
+<li><a href="#52-%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF0003h%E3%81%AE%E7%A2%BA%E8%AA%8D">5.2. ブロック0003hの確認</a></li>
+<li><a href="#6-%E6%94%B9%E8%A8%82%E5%B1%A5%E6%AD%B4">6. 改訂履歴</a></li>
+</ul>
+<h2 id="2-%E6%A6%82%E8%A6%81">2. 概要</h2>
+<p>本資料ではグラモ様向けMIFARE Plusのエンコード確認方法の案を示します。</p>
+<h3 id="21-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E6%A9%9F%E5%99%A8">2.1. 使用する機器</h3>
+<ul>
+<li>Windowsパソコン</li>
+<li>NXPリーダライタ（Pegoda）</li>
+<li>NXPソフトウェア（RFID Discover）</li>
+</ul>
+<h3 id="22-%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E4%BB%95%E6%A7%98">2.2. エンコード仕様</h3>
+<h4 id="221-%E9%8D%B5%E5%80%A4">2.2.1 鍵値</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">ブロックNo.</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">9000</td>
+<td>9000AAAA9000BBBB9000CCCC9000DDDD</td>
+</tr>
+<tr>
+<td style="text-align:center">9001</td>
+<td>9001BBBB9001CCCC9001DDDD9001EEEE</td>
+</tr>
+<tr>
+<td style="text-align:center">4000</td>
+<td>4000AAAA4000BBBB4000CCCC4000DDDD</td>
+</tr>
+<tr>
+<td style="text-align:center">4001</td>
+<td>4001AAAA4001BBBB4001CCCC4001DDDD</td>
+</tr>
+</tbody>
+</table>
+<h4 id="222-%E5%8F%AF%E5%A4%89%E3%83%87%E3%83%BC%E3%82%BF%E4%BE%8B">2.2.2 可変データ例</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">ブロックNo.</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0001</td>
+<td>07E70D00001AAA000000000000000000</td>
+</tr>
+<tr>
+<td style="text-align:center">0002</td>
+<td>32C3A336F38E4E91AF11FD3F89B015CF</td>
+</tr>
+</tbody>
+</table>
+<h4 id="223-%E5%9B%BA%E5%AE%9A%E3%83%87%E3%83%BC%E3%82%BF">2.2.3 固定データ</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">ブロックNo.</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0003</td>
+<td>00000000000F0F0F0F00000000000000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99">3. 事前準備</h2>
+<p>RFID DiscoverのKEY Storeに今回の検査で使用する鍵を登録しておきます。</p>
+<p><img src="./グラモMFP00.png" alt="KEY Store"></p>
+<p>上の例ではKeyNo.20に4000ブロック、KeyNo.21に4001ブロック、KeyNo.22に9000ブロック、KeyNo.23に9001ブロックの鍵を各々登録しています。</p>
+<h2 id="4-%E3%82%AB%E3%83%BC%E3%83%89%E3%81%B8%E3%81%AE%E9%8D%B5%E3%81%AE%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E7%A2%BA%E8%AA%8D">4. カードへの鍵の書き込み確認</h2>
+<p>4つの鍵がカードに正しく書き込まれていることを確認します。</p>
+<ol>
+<li>
+<p>9000hの鍵
+<img src="./グラモMFP_Key9000.png" alt="Key9000">
+SeculityLevel3のメニューを開き、Block/KeyNoで9000を選択（⑦）、KeyStoreKeyで9000hの鍵を登録した番号を選択（⑧）、FirstAuthを実行（⑨）してSUCCESS（⑩）が表示されればOKです。</p>
+</li>
+<li>
+<p>9001hの鍵
+<img src="./グラモMFP_Key9001.png" alt="Key9001"></p>
+</li>
+<li>
+<p>4000hの鍵
+<img src="./グラモMFP_Key4000.png" alt="Key4000"></p>
+</li>
+<li>
+<p>4001hの鍵
+<img src="./グラモMFP_Key4001.png" alt="Key4001"></p>
+</li>
+</ol>
+<h2 id="5-%E5%8F%AF%E5%A4%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E7%A2%BA%E8%AA%8D">5. 可変データの書き込み確認</h2>
+<h2 id="51-%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF0001h%E3%81%A8%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF0002h%E3%81%AE%E7%A2%BA%E8%AA%8D">5.1. ブロック0001hとブロック0002hの確認</h2>
+<p><img src="./グラモMFP08.png" alt="ブロック0001h-01">
+Block/KeyNoで4000を選択（①）、KeyStoreKeyで4000hの鍵を登録した番号を選択（②）、FirstAuthを実行します（③）。</p>
+<p><img src="./グラモMFP09.png" alt="ブロック0001h-02">
+DataAccessでBlock0000/0001/0002を選択し（①）MAConCommandとMAConResponseのチェックが入っていることを確認、Readボタンを押します（③）。</p>
+<p><img src="./グラモMFP10.png" alt="ブロック0001h-03">
+SUCCESSが表示され（④）、ブロック0001とブロック0002の読み出しデータが期待している可変データと一致していればOKです（⑤）。</p>
+<h2 id="52-%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF0003h%E3%81%AE%E7%A2%BA%E8%AA%8D">5.2. ブロック0003hの確認</h2>
+<p><img src="./グラモMFP11.png" alt="ブロック0003h-01">
+DataAccessでBlock0003を選択し（①）Readボタンを押します（②）。</p>
+<p><img src="./グラモMFP12.png" alt="ブロック0003h-02">
+SUCCESSが表示され（③）、ブロック0003の読み出しデータが<a href="#223-%E5%9B%BA%E5%AE%9A%E3%83%87%E3%83%BC%E3%82%BF">2.2.3</a>に示した固定データと一致していればOKです（④）。</p>
+<h2 id="6-%E6%94%B9%E8%A8%82%E5%B1%A5%E6%AD%B4">6. 改訂履歴</h2>
+<ul>
+<li>1.0:
+<ul>
+<li>作成日時: 2023-04-14</li>
+<li>更新内容: 初版作成</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>
