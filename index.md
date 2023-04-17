@@ -24,6 +24,10 @@
   - NXPソフトウェア（RFID Discover）
   
 ### 2.2. エンコード仕様
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          ---: |
+| git status   | git status     | git status    |
+| git diff     | git diff       | git diff      |
 
 #### 2.2.1 鍵値
 |ブロックNo.|値|
